@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qWf-DR-AC7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperKahramanKitabi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-HJ-uCH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JbY-HJ-uCH" secondAttribute="bottom" id="Mhv-uZ-OA0"/>
+                            <constraint firstItem="JbY-HJ-uCH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="duL-SU-bEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JbY-HJ-uCH" secondAttribute="trailing" id="eE7-DO-ETd"/>
+                            <constraint firstItem="JbY-HJ-uCH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zC1-0c-bna"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6Zc-ae-Nks"/>
+                    <connections>
+                        <outlet property="tableView" destination="JbY-HJ-uCH" id="KiC-s7-ten"/>
+                        <segue destination="3WV-SC-Qep" kind="show" identifier="toDetailsVC" id="kZw-aA-H2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="67.633928571428569"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="1kV-oX-TYg">
+            <objects>
+                <viewController id="3WV-SC-Qep" customClass="DetailsViewController" customModule="SuperKahramanKitabi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="74Q-32-4r5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaR-vd-Ym7">
+                                <rect key="frame" x="54" y="124" width="307" height="280"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Q-cg-Kkv">
+                                <rect key="frame" x="54" y="450" width="307" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="4du-tV-E3O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oYm-Qw-vHb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TaR-vd-Ym7" firstAttribute="leading" secondItem="oYm-Qw-vHb" secondAttribute="leading" constant="54" id="2nT-uV-7uO"/>
+                            <constraint firstItem="TaR-vd-Ym7" firstAttribute="leading" secondItem="S2Q-cg-Kkv" secondAttribute="leading" id="K9c-mf-UPI"/>
+                            <constraint firstItem="TaR-vd-Ym7" firstAttribute="centerX" secondItem="74Q-32-4r5" secondAttribute="centerX" id="N8O-mM-DVE"/>
+                            <constraint firstItem="oYm-Qw-vHb" firstAttribute="bottom" secondItem="S2Q-cg-Kkv" secondAttribute="bottom" constant="349" id="NIM-EJ-JFA"/>
+                            <constraint firstItem="TaR-vd-Ym7" firstAttribute="trailing" secondItem="S2Q-cg-Kkv" secondAttribute="trailing" id="TVM-Ns-ZQp"/>
+                            <constraint firstItem="TaR-vd-Ym7" firstAttribute="top" secondItem="oYm-Qw-vHb" secondAttribute="top" constant="36" id="YFF-hE-RDt"/>
+                            <constraint firstItem="S2Q-cg-Kkv" firstAttribute="top" secondItem="TaR-vd-Ym7" secondAttribute="bottom" constant="46" id="ozw-hD-KQG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LEi-HX-fyP"/>
+                    <connections>
+                        <outlet property="ImageView" destination="TaR-vd-Ym7" id="6aW-Es-ChR"/>
+                        <outlet property="label" destination="S2Q-cg-Kkv" id="xBO-6Y-paI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RxI-KE-SEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753.6231884057972" y="67.633928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZJs-YX-OmO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qWf-DR-AC7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5x9-pb-eZC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hw6-QV-6n0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLs-3M-BHL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
